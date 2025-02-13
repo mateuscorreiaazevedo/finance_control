@@ -6,8 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "npx @biomejs/biome lint --write .",
-    "format": "npx @biomejs/biome format --write .",
+    "lint": "npx @biomejs/biome lint --write ./src",
+    "format": "npx @biomejs/biome format --write ./src",
     "lint:fix": "npx @biomejs/biome check --write ./src",
     "prepare": "husky"
   },
