@@ -40,6 +40,9 @@
       "suspicious": {
         "noConsole": "error"
       },
+      "complexity": {
+        "noForEach": "off"
+      },
       "correctness": {
         "noEmptyPattern": {
           "level": "warn"

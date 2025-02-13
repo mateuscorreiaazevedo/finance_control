@@ -8,17 +8,19 @@
     "start": "next start",
     "lint": "npx @biomejs/biome lint --write .",
     "format": "npx @biomejs/biome format --write .",
-    "lint:fix": "npx @biomejs/biome check --write .",
+    "lint:fix": "npx @biomejs/biome check --write ./src",
     "prepare": "husky"
   },
   "dependencies": {
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@prisma/client": "^6.3.1",
+    "@prisma/extension-accelerate": "^1.2.1",
     "husky": "^9.1.7",
     "next": "15.1.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sass": "^1.84.0"
   },
   "devDependencies": {
     "@biomejs/monorepo": "biomejs/biome",
