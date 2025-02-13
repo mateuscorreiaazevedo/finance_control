@@ -4,7 +4,7 @@
 commit_message=$(cat "$1")
 
 # Define as palavras permitidas para a primeira palavra do commit
-allowed_prefixes=("feat" "fix" "wip" "chore" "refactor", "docs")
+allowed_prefixes=("feat" "fix" "wip" "chore" "refactor" "docs")
 
 # Extrai a primeira palavra da mensagem do commit
 first_word=$(echo "$commit_message" | awk '{print $1}')
