@@ -31,6 +31,15 @@ export class FindUserRepository implements FindUserGateway {
 
     return user ? UserMapper.toEntity(user) : null
   }
+  /**
+   * English: Finds a user by their email in the database and maps them to the User entity.
+   *
+   * Português: Encontra um usuário pelo seu email no banco de dados e o mapeia para a entidade User.
+   * @param email - English: The email of the user to find.
+   * @param email - Português: O email do usuário a ser encontrado.
+   * @returns English: A promise that resolves to the User entity if found, or null if not found.
+   * @returns Português: Uma promessa que resolve na entidade User se encontrado, ou null se não encontrado.
+   */
   async findByEmail(email: string): Promise<User | null> {
     const user = await prisma.user.findFirst({ where: { email } })
 
