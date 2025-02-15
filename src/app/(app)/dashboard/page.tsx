@@ -1,6 +1,6 @@
-import { SetTheme } from '@/modules/core'
+import { SetTheme } from '@/shared/components'
 
-export default function App() {
+export default function DashboardPage() {
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen gap-2">
       <SetTheme />

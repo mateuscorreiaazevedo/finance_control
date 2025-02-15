@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { Montserrat, Poppins } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import '../assets/styles/globals.scss'
-import { ThemeProvider, TranslationProvider, getTranslations, initTranslation } from '@/modules/core'
+import { ThemeProvider, TranslationProvider } from '@/shared/contexts'
+import { getTranslations, initTranslation } from '@/shared/functions'
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
