@@ -1,7 +1,11 @@
-export default function Landingpage() {
+import { getTranslations } from '@/shared/functions/server'
+
+export default async function Landingpage() {
+  const { translate } = await getTranslations()
+
   return (
     <div>
-      <p>Landing page</p>
+      <p>{translate('common.hello')}</p>
     </div>
   )
 }

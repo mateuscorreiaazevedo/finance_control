@@ -3,7 +3,7 @@ import { Montserrat, Poppins } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import '../assets/styles/globals.scss'
 import { ThemeProvider, TranslationProvider } from '@/shared/contexts'
-import { getTranslations, initTranslation } from '@/shared/functions'
+import { getTranslations, initTranslation } from '@/shared/functions/server'
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',

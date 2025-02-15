@@ -5,7 +5,8 @@ export async function currentLocale() {
   const cookieStore = await cookies()
 
   function get() {
-    return cookieStore.get('locale')?.value ?? ''
+    const locale = cookieStore.get('locale')?.value
+    return locale ? atob(locale) : ''
   }
 
   function set(locale: string) {

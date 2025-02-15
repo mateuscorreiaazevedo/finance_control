@@ -30,7 +30,7 @@ export class ClientConfig {
     if (lang) {
       this.next.cookies.set({
         name: 'locale',
-        value: locales.includes(lang) ? lang : defaultLang,
+        value: locales.includes(lang) ? btoa(lang) : btoa(defaultLang),
         path: '/',
         httpOnly: false,
         expires: EXPIRES_LOCALE,
@@ -43,7 +43,7 @@ export class ClientConfig {
     if (!lang && !locale) {
       this.next.cookies.set({
         name: 'locale',
-        value: defaultLang,
+        value: btoa(defaultLang),
         path: '/',
         httpOnly: false,
         expires: EXPIRES_LOCALE,
