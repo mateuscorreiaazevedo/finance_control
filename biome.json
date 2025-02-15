@@ -43,7 +43,8 @@
         "noConfusingVoidType": "off"
       },
       "complexity": {
-        "noForEach": "off"
+        "noForEach": "off",
+        "noStaticOnlyClass": "off"
       },
       "correctness": {
         "noEmptyPattern": {
