@@ -1,15 +1,15 @@
-import { translationHelper } from '@/main/translate'
+import { translationConfig } from '@/main/config'
 import { currentLocale } from '@/main/translate/utils/current-locale'
 
 export async function getTranslations(prefix?: string) {
   const { getCurrentMessageFromLocale, getValueFromPathMessagesIsArray, getValueFromPathWithVariables } =
-    translationHelper
+    translationConfig
   const { get } = await currentLocale()
 
   const locale = get()
   const messages = getCurrentMessageFromLocale(locale)
 
-  function translate(path: string, values?: Record<string, string | number>) {
+  function translate(path: string, values?: TranslationVariables) {
     const fullPath = prefix ? `${prefix}.${path}` : path
 
     return getValueFromPathWithVariables({

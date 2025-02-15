@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Montserrat, Poppins } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import '../assets/styles/globals.scss'
-import { TranslationProvider, getTranslations, initTranslation } from '@/modules/core'
+import { ThemeProvider, TranslationProvider, getTranslations, initTranslation } from '@/modules/core'
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -30,9 +30,11 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       <body
         className={`${montserrat.variable} ${poppins.variable} antialiased font-montserrat bg-background text-foreground`}
       >
-        <TranslationProvider locale={locale} messages={messages}>
-          {children}
-        </TranslationProvider>
+        <ThemeProvider>
+          <TranslationProvider locale={locale} messages={messages}>
+            {children}
+          </TranslationProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -1,11 +1,9 @@
-import { getTranslations } from '@/modules/core'
+import { SetTheme } from '@/modules/core'
 
-export default async function App() {
-  const { translate } = await getTranslations()
-
+export default function App() {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen">
-      <h1 className="text-xl">{translate('common.gretting', { name: 'Mateus' })}</h1>
+    <div className="flex flex-col items-center justify-center w-full h-screen gap-2">
+      <SetTheme />
     </div>
   )
 }

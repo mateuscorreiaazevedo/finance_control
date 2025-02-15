@@ -1,4 +1,5 @@
 {
   "hello": "Olá mundo!",
-  "gretting": "Olá {name}"
+  "gretting": "Olá {name}",
+  "theme": "Tema: {theme}"
 }

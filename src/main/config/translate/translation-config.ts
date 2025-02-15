@@ -1,11 +1,11 @@
-import messages from '../../messages'
+import { messages } from '@/main/translate'
 
 type Messages = typeof messages
 
 type VariablesType = {
   path: string
   messages: Messages
-  variables?: Record<string, string | number>
+  variables?: TranslationVariables
 }
 
 /**
@@ -24,7 +24,7 @@ function getValueFromPathMessages(path: string, messages: any): string {
   return result != null ? String(result) : path
 }
 
-export namespace translationHelper {
+export namespace translationConfig {
   /**
    * Retorna as mensagens atuais com base na localidade especificada.
    * @param locale - A localidade para a qual as mensagens devem ser retornadas.

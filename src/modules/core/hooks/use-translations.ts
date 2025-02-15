@@ -1,13 +1,12 @@
-import { translationHelper } from '@/main/translate'
+import { translationConfig } from '@/main/config'
 import { useMessages } from '../contexts/translation-context'
 
-type Values = Record<string, string | number>
 export function useTranslations(prefix?: string) {
   const { messages } = useMessages()
 
-  const { getValueFromPathWithVariables, getValueFromPathMessagesIsArray } = translationHelper
+  const { getValueFromPathWithVariables, getValueFromPathMessagesIsArray } = translationConfig
 
-  function translate(path: string, values?: Values): string {
+  function translate(path: string, values?: TranslationVariables): string {
     const fullPath = prefix ? `${prefix}.${path}` : path
     const translatedValue = getValueFromPathWithVariables({ path: fullPath, messages, variables: values })
 
