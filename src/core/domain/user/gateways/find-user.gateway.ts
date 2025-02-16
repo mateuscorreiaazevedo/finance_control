@@ -1,4 +1,4 @@
-import type { User } from '../entities/user.entity'
+import type { User } from '..'
 
 export abstract class FindUserGateway {
   abstract findAll(): Promise<User[]>

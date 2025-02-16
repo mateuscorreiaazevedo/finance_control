@@ -1,4 +1,4 @@
-import { locales } from '@/main/translate'
+import { locales } from '@main/translate'
 import dayjs from 'dayjs'
 import { type NextRequest, NextResponse } from 'next/server'
 

@@ -1,5 +1,5 @@
-import type { FindUserGateway, User } from '@/domain/user'
-import { prisma } from '@/shared/utils'
+import type { FindUserGateway, User } from '@domain/user'
+import { prisma } from '@shared/utils'
 import { UserMapper } from '../mappers/user.mapper'
 
 export class FindUserRepository implements FindUserGateway {

@@ -1,4 +1,4 @@
-import { type RoleUser, User } from '@/domain/user'
+import { type RoleUser, User } from '@domain/user'
 import type { User as PrismaUser } from '@prisma/client'
 
 export class UserMapper {
@@ -24,6 +24,7 @@ export class UserMapper {
       role: payload.userRole,
       created_at: payload.createdAt ?? new Date(),
       updated_at: payload.updatedAt ?? new Date(),
+      birth_date: payload.birthDate,
       id: payload.id,
       password: payload.password,
     }

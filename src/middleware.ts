@@ -1,5 +1,5 @@
+import { ClientConfig } from '@main/config'
 import { type NextRequest, NextResponse } from 'next/server'
-import { ClientConfig } from './main/config'
 
 export async function middleware(req: NextRequest) {
   const clientConfig = new ClientConfig(req)

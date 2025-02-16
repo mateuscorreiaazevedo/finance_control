@@ -23,10 +23,27 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*",
-        "./src/core/*"
-      ]
+      "@main/*": [
+        "./src/main/*",
+      ],
+      "@shared/*": [
+        "./src/shared/*",
+      ],
+      "@assets/*": [
+        "./src/assets/*",
+      ],
+      "@domain/*": [
+        "./src/core/domain/*"
+      ],
+      "@infra/*": [
+        "./src/core/infra/*"
+      ],
+      "@application/*": [
+        "./src/core/application/*"
+      ],
+      "@presentation/*": [
+        "./src/core/presentation/*"
+      ],
     }
   },
   "include": [

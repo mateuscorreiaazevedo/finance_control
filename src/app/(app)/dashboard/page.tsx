@@ -1,5 +1,5 @@
-import { User } from '@/domain/user'
-import { SetTheme } from '@/shared/components'
+import { User } from '@domain/user'
+import { SetTheme } from '@shared/components'
 
 export default function DashboardPage() {
   const user = new User({
