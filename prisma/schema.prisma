@@ -25,6 +25,7 @@ model User {
   last_name  String
   password   String
   role       UserRole @default(USER)
+  birth_date DateTime
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
