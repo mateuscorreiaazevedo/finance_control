@@ -2,8 +2,11 @@ import { translationConfig } from '@main/config'
 import { currentLocale } from '@main/translate/utils/current-locale'
 
 export async function getTranslations(prefix?: string) {
-  const { getCurrentMessageFromLocale, getValueFromPathMessagesIsArray, getValueFromPathWithVariables } =
-    translationConfig
+  const {
+    getCurrentMessageFromLocale,
+    getValueFromPathMessagesIsArray,
+    getValueFromPathWithVariables,
+  } = translationConfig
   const { get } = await currentLocale()
 
   const locale = get()

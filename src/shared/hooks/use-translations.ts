@@ -8,7 +8,11 @@ export function useTranslations(prefix?: string) {
 
   function translate(path: string, values?: TranslationVariables): string {
     const fullPath = prefix ? `${prefix}.${path}` : path
-    const translatedValue = getValueFromPathWithVariables({ path: fullPath, messages, variables: values })
+    const translatedValue = getValueFromPathWithVariables({
+      path: fullPath,
+      messages,
+      variables: values,
+    })
 
     return translatedValue
   }

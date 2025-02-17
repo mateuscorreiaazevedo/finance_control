@@ -15,7 +15,12 @@ export function ThemeProvider({ children }: PropsWithChildren) {
   if (!mounted) return null
 
   return (
-    <NextThemesProvider attribute={'class'} defaultTheme={'system'} enableSystem disableTransitionOnChange>
+    <NextThemesProvider
+      attribute={'class'}
+      defaultTheme={'system'}
+      enableSystem
+      disableTransitionOnChange
+    >
       {children}
     </NextThemesProvider>
   )

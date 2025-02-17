@@ -20,7 +20,9 @@ export function TranslationProvider(props: PropsWithChildren<TranslationType>) {
     return { locale, messages }
   }, [locale, messages])
 
-  return <TranslationContext.Provider value={cacheMessages}>{children}</TranslationContext.Provider>
+  return (
+    <TranslationContext.Provider value={cacheMessages}>{children}</TranslationContext.Provider>
+  )
 }
 
 export function useMessages() {

@@ -42,7 +42,10 @@ export namespace translationConfig {
    * @param messages - O objeto de mensagens onde o valor será procurado.
    * @returns - O valor encontrado no caminho especificado.
    */
-  export function getValueFromPathMessagesIsArray<K = any>(path: string, messages: any): K[] | string {
+  export function getValueFromPathMessagesIsArray<K = any>(
+    path: string,
+    messages: any,
+  ): K[] | string {
     const result = getValueFromPath(path, messages)
 
     return Array.isArray(result) ? result : path
@@ -61,6 +64,9 @@ export namespace translationConfig {
       return getValueFromPathMessages(path, messages)
     }
     const translateString = getValueFromPathMessages(path, messages)
-    return translateString.replace(/\{(\w+)\}/g, (_, key) => String(variables[key]) || `{${key}}`)
+    return translateString.replace(
+      /\{(\w+)\}/g,
+      (_, key) => String(variables[key]) || `{${key}}`,
+    )
   }
 }
