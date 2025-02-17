@@ -1,8 +1,9 @@
-import type { FindUserContract, User } from '@domain/user'
-import { prisma } from '@shared/utils'
-import { UserMapper } from '../mappers/user.mapper'
+import { prisma } from '@/shared/utils'
+import type { FindUserContract } from '../contracts'
+import type { User } from '../entities'
+import { UserMapper } from '../utils'
 
-export class FindUserRepository implements FindUserContract {
+export class FindUserService implements FindUserContract {
   async findAll(): Promise<User[]> {
     const users = await prisma.user.findMany()
 

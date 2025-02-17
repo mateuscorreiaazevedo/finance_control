@@ -1,4 +1,4 @@
-import { userSchema } from '..'
+import { userSchema } from './user.schema'
 
 export enum RoleUser {
   USER = 'USER',

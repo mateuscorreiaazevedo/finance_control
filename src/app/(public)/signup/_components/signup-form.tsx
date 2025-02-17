@@ -1,7 +1,7 @@
 'use client'
 
-import { AlertSuccess, Button } from '@shared/components'
-import { useToast, useTranslations } from '@shared/hooks'
+import { AlertSuccess, Button } from '@/shared/components'
+import { useToast, useTranslations } from '@/shared/hooks'
 import { useState } from 'react'
 import type { SignUpActionResponse } from '../_actions/signup.action'
 

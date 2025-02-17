@@ -1,8 +1,8 @@
 'use server'
 
 import { randomUUID } from 'node:crypto'
-import { RoleUser, User } from '@domain/user'
-import { TokenUtil } from '@shared/utils'
+import { RoleUser, User } from '@/modules/user/entities'
+import { TokenUtil } from '@/shared/utils'
 import dayjs from 'dayjs'
 import { cookies } from 'next/headers'
 

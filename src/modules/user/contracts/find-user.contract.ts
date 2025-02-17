@@ -1,4 +1,4 @@
-import type { User } from '..'
+import type { User } from '../entities'
 
 export abstract class FindUserContract {
   /**

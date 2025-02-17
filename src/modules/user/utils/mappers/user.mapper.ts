@@ -1,4 +1,4 @@
-import { type RoleUser, User } from '@domain/user'
+import { type RoleUser, User } from '@/modules/user/entities'
 import type { User as PrismaUser } from '@prisma/client'
 
 export class UserMapper {
