@@ -5,4 +5,4 @@ export * from './entities/user.entity'
 export * from './schemas/user.schema'
 
 // Gateways
-export * from './gateways/find-user.gateway'
+export * from './contracts/find-user.contract'
