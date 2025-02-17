@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { Montserrat, Poppins } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import '../assets/styles/globals.scss'
-import { ThemeProvider, TranslationProvider } from '@/shared/contexts'
-import { getTranslations, initTranslation } from '@/shared/functions/server'
+import { Toast } from '@shared/components'
+import { ThemeProvider, TranslationProvider } from '@shared/contexts'
+import { getTranslations, initTranslation } from '@shared/functions/server'
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -19,7 +20,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const { translate } = await getTranslations()
 
   return {
-    title: translate('common.hello'),
+    title: translate('common.meta.title'),
+    description: translate('common.meta.description'),
   }
 }
 
@@ -29,11 +31,12 @@ export default async function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang={locale}>
       <body
-        className={`${montserrat.variable} ${poppins.variable} antialiased font-montserrat bg-background text-foreground`}
+        className={`${montserrat.variable} ${poppins.variable} antialiased font-poppins bg-background text-foreground`}
       >
         <ThemeProvider>
           <TranslationProvider locale={locale} messages={messages}>
             {children}
+            <Toast />
           </TranslationProvider>
         </ThemeProvider>
       </body>

@@ -1,0 +1,36 @@
+{
+  "id": {
+    "invalid": "Formato do ID é inválido."
+  },
+  "firstName": {
+    "required": "O nome é obrigatório",
+    "minLength": "O nome deve no mínimo 3 caracteres.",
+    "maxLength": "O nome deve ter no máximo 20 caracteres."
+  },
+  "lastName": {
+    "required": "O sobrenome é obrigatório",
+    "minLength": "O sobrenome deve no mínimo 3 caracteres.",
+    "maxLength": "O sobrenome deve ter no máximo 32 caracteres."
+  },
+  "email": {
+    "required": "O email é obrigatório",
+    "invalid": "Formato de email inválido.",
+    "unique": "Já existe um usuário com este email."
+  },
+  "password": {
+    "required": "A senha é obrigatória.",
+    "minLength": "A senha deve no mínimo 8 caracteres.",
+    "maxLength": "A senha deve ter no máximo 32 caracteres.",
+    "uppercase": "A senha deve ter pelo menos uma letra maiúscula.",
+    "lowercase": "A senha deve ter pelo menos uma letra minúscula.",
+    "digit": "A senha deve ter pelo menos um dígito.",
+    "specialChar": "A senha deve ter pelo menos um caractere especial."
+  },
+  "role": {
+    "invalid": "A regra de acesso só pode ser ADMIN ou USER."
+  },
+  "birthDate": {
+    "required": "A data de aniversário é obrigatória.",
+    "underage": "O usuário não pode ser menor de 18 anos."
+  }
+}

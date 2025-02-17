@@ -13,7 +13,7 @@
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 120,
+    "lineWidth": 96,
     "useEditorconfig": true,
     "lineEnding": "lf",
     "attributePosition": "auto"
@@ -44,7 +44,8 @@
       },
       "complexity": {
         "noForEach": "off",
-        "noStaticOnlyClass": "off"
+        "noStaticOnlyClass": "off",
+        "noExtraBooleanCast": "off"
       },
       "correctness": {
         "noEmptyPattern": {
@@ -53,6 +54,17 @@
         "noUnusedImports": {
           "level": "error",
           "fix": "safe"
+        },
+        "useExhaustiveDependencies": {
+          "level": "off",
+          "options": {
+            "hooks": [
+              {
+                "name": "useCallback",
+                "stableResult": true
+              }
+            ]
+          }
         },
         "noUnusedVariables": {
           "level": "warn",

@@ -33,6 +33,7 @@ export class ClientConfig {
         value: locales.includes(lang) ? btoa(lang) : btoa(defaultLang),
         path: '/',
         httpOnly: false,
+        domain: process.env.DOMAIN,
         expires: EXPIRES_LOCALE,
       })
 
@@ -46,6 +47,7 @@ export class ClientConfig {
         value: btoa(defaultLang),
         path: '/',
         httpOnly: false,
+        domain: process.env.DOMAIN,
         expires: EXPIRES_LOCALE,
       })
 

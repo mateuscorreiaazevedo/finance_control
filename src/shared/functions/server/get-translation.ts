@@ -1,5 +1,5 @@
-import { translationConfig } from '@/main/config'
-import { currentLocale } from '@/main/translate/utils/current-locale'
+import { translationConfig } from '@main/config'
+import { currentLocale } from '@main/translate/utils/current-locale'
 
 export async function getTranslations(prefix?: string) {
   const { getCurrentMessageFromLocale, getValueFromPathMessagesIsArray, getValueFromPathWithVariables } =

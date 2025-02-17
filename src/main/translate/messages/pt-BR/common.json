@@ -1,5 +1,9 @@
 {
   "hello": "Olá mundo!",
   "gretting": "Olá {name}",
-  "theme": "Tema: {theme}"
+  "theme": "Tema: {theme}",
+  "meta": {
+    "title": "Finance Control",
+    "description": "O seu novo modo de controlar suas finanças."
+  }
 }

@@ -1,4 +1,4 @@
-import { translationConfig } from '@/main/config'
+import { translationConfig } from '@main/config'
 import { useMessages } from '../contexts/translation-context'
 
 export function useTranslations(prefix?: string) {
