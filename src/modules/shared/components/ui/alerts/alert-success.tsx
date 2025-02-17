@@ -1,6 +1,6 @@
 'use client'
 
-import { useAlertContents } from '@shared/hooks'
+import { useAlertContents } from '@/modules/shared/hooks'
 import { Check, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 

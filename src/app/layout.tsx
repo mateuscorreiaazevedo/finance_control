@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { Montserrat, Poppins } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import '../assets/styles/globals.scss'
-import { Toast } from '@shared/components'
-import { ThemeProvider, TranslationProvider } from '@shared/contexts'
-import { getTranslations, initTranslation } from '@shared/functions/server'
+import { Toast } from '@/modules/shared/components'
+import { ThemeProvider, TranslationProvider } from '@/modules/shared/contexts'
+import { getTranslations, initTranslation } from '@/modules/shared/utils'
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',

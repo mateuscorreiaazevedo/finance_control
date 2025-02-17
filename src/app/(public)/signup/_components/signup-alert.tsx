@@ -1,6 +1,6 @@
 'use client'
 
-import { useSaveEffect } from '@/shared/hooks'
+import { useSaveEffect } from '@/modules/shared/hooks'
 import toast from 'react-hot-toast'
 
 type Props = {

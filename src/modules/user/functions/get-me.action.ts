@@ -1,5 +1,5 @@
 'use server'
-import { TokenUtil } from '@/shared/utils'
+import { TokenUtil } from '@/modules/shared/utils'
 import dayjs from 'dayjs'
 import { cookies } from 'next/headers'
 
