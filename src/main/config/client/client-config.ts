@@ -60,7 +60,10 @@ export class ClientConfig {
     }
 
     if (modified) {
-      const redirect = NextResponse.redirect(new URL(pathname, this.request.url))
+      const queries = searchParams.toString()
+      const redirect = NextResponse.redirect(
+        new URL(`${pathname}?${queries}`, this.request.url),
+      )
 
       this.next.cookies.getAll().forEach(cookie => {
         redirect.cookies.set(cookie)
