@@ -1,5 +1,5 @@
-import { signoutAction } from '@/modules/shared/functions'
-import { getMeAction } from '@/modules/user/functions'
+import { getMeAction } from '@/app/(app)/_functions/get-me.action'
+import { signoutAction } from '@/app/(app)/_functions/signout.action'
 import { SignupAlert } from './_components/signup-alert'
 import { SignupForm } from './_components/signup-form'
 import { signupAction } from './_functions/signup.action'

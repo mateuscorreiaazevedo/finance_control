@@ -1,33 +1,26 @@
 'use server'
-
-import { randomUUID } from 'node:crypto'
 import { TokenHelper } from '@/modules/shared/lib'
-import { RoleUser, User } from '@/modules/user/entities'
+import type { CreateUserRequestDTO } from '@/modules/user/dtos'
+import {} from '@/modules/user/entities'
+import { createUserFactory } from '@/modules/user/factories'
 import dayjs from 'dayjs'
 import { cookies } from 'next/headers'
 
 export type SignUpActionResponse = ActionsResponse | void
 
-export async function signupAction(): Promise<SignUpActionResponse> {
+export async function signupAction(data: CreateUserRequestDTO): Promise<SignUpActionResponse> {
   const cookieStore = await cookies()
   try {
-    const user = new User({
-      firstName: 'Mateus',
-      lastName: 'Azevedo',
-      email: 'mateusazevedo@example.com',
-      password: 'Xkipi34.',
-      role: RoleUser.USER,
-      birthDate: dayjs('1999-05-20').startOf('day').toDate(),
-    })
+    const createdUser = await createUserFactory(data)
 
     const expiresIn = dayjs().add(7, 'day').toDate()
 
     const createdToken = TokenHelper.create({
-      id: randomUUID(),
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      userRole: user.userRole,
+      id: createdUser.id,
+      firstName: createdUser.firstName,
+      lastName: createdUser.lastName,
+      email: createdUser.email,
+      userRole: createdUser.userRole,
       exp: expiresIn.getTime(),
     })
 

@@ -1,13 +1,17 @@
 import { prisma } from '@/modules/shared/lib'
-import type { FindUserContract } from '../contracts'
+import type { UserContract } from '../contracts'
 import type { User } from '../entities'
 import { UserMapper } from '../utils'
 
-export class FindUserService implements FindUserContract {
-  async findAll(): Promise<User[]> {
-    const users = await prisma.user.findMany()
+export class UserService implements UserContract {
+  async create(user: User): Promise<User> {
+    const raw = UserMapper.toPrisma(user)
 
-    return users.map(UserMapper.toEntity)
+    const createdUser = await prisma.user.create({
+      data: raw,
+    })
+
+    return UserMapper.toEntity(createdUser)
   }
 
   async findById(id: string): Promise<User | null> {

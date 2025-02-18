@@ -1,5 +1,6 @@
-import { type RoleUser, User } from '@/modules/user/entities'
-import type { User as PrismaUser } from '@prisma/client'
+import { User } from '@/modules/user/entities'
+import type { Prisma, User as PrismaUser } from '@prisma/client'
+import type { RoleUser } from '../enums/user-role.enum'
 
 export class UserMapper {
   static toEntity(payload: PrismaUser): User {
@@ -16,17 +17,14 @@ export class UserMapper {
     })
   }
 
-  static toPrisma(payload: User): PrismaUser {
+  static toPrisma(payload: User): Prisma.UserCreateInput {
     return {
       first_name: payload.firstName,
       last_name: payload.lastName,
       email: payload.email,
-      role: payload.userRole,
-      created_at: payload.createdAt ?? new Date(),
-      updated_at: payload.updatedAt ?? new Date(),
-      birth_date: payload.birthDate,
-      id: payload.id,
       password: payload.password,
+      birth_date: payload.birthDate,
+      role: payload.userRole,
     }
   }
 }

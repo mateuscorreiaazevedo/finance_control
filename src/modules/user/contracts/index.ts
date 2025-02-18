@@ -1,1 +1,1 @@
-export * from './find-user.contract'
+export * from './user.contract'

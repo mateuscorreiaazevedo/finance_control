@@ -4,7 +4,7 @@ import type { PropsWithChildren } from 'react'
 import '../assets/styles/globals.scss'
 import { Toast } from '@/modules/shared/components'
 import { ThemeProvider, TranslationProvider } from '@/modules/shared/contexts'
-import { getTranslations, initTranslation } from '@/modules/shared/utils'
+import { getTranslations, initTranslation } from '@/modules/shared/functions/server'
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',

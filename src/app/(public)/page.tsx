@@ -1,4 +1,4 @@
-import { getTranslations } from '@/modules/shared/utils'
+import { getTranslations } from '@/modules/shared/functions/server'
 
 export default async function Landingpage() {
   const { translate } = await getTranslations()

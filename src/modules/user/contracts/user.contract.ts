@@ -1,15 +1,17 @@
 import type { User } from '../entities'
 
-export abstract class FindUserContract {
+export abstract class UserContract {
   /**
-   * English: Finds all users in the database and maps them to the User entity.
+   * English: Creates a new user in the database.
    *
-   * Portugês: Encontra todos os usuários no banco de dados e os mapeia para a entidade User.
-   * @returns English: A promise that resolves to an array of User entities.
-   * @returns Português: Uma promessa que resolve em um array de entidades User.
+   * Portugês: Cria um novo usuário no banco de dados.
+   * @param user - English: The user object to be created.
+   * @param user - Português: O objeto do usuário a ser criado.
+   * @returns English: A promise that resolves to the created User entity.
+   * @returns Português: Uma promessa que resolve na entidade User criada.
    */
+  abstract create(user: User): Promise<User>
 
-  abstract findAll(): Promise<User[]>
   /**
    * English: Finds a user by their ID in the database and maps them to the User entity.
    *

@@ -1,9 +1,5 @@
+import { RoleUser } from '../utils'
 import { userSchema } from './user.schema'
-
-export enum RoleUser {
-  USER = 'USER',
-  ADMIN = 'ADMIN',
-}
 
 export interface IUser {
   id?: string

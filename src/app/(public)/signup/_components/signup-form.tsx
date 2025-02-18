@@ -2,11 +2,12 @@
 
 import { AlertSuccess, Button } from '@/modules/shared/components'
 import { useToast, useTranslations } from '@/modules/shared/hooks'
+import type { CreateUserRequestDTO } from '@/modules/user/dtos'
 import { useState } from 'react'
 import type { SignUpActionResponse } from '../_functions/signup.action'
 
 type Props = {
-  onSignup: () => Promise<SignUpActionResponse>
+  onSignup: (data: CreateUserRequestDTO) => Promise<SignUpActionResponse>
   onSignout: () => Promise<void>
 }
 export function SignupForm({ onSignup, onSignout }: Props) {
@@ -16,7 +17,14 @@ export function SignupForm({ onSignup, onSignout }: Props) {
   const { setNotification } = useToast()
 
   const handleSignUp = async () => {
-    const response = await onSignup()
+    const response = await onSignup({
+      firstName: 'Mateus',
+      lastName: 'st',
+      email: 'test@example',
+      password: 'test123',
+      confirmPassword: 'test123',
+      birthDate: new Date('1990-01-01'),
+    })
 
     if (response?.error) {
       setError(response.error)
