@@ -1,9 +1,9 @@
-import { translationConfig } from '@main/config'
-import { currentLocale } from '@main/translate/utils/current-locale'
+import { translationConfig } from '@/main/config'
+import { cookies } from 'next/headers'
 
 export async function initTranslation() {
-  const { get } = await currentLocale()
-  const locale = get()
+  const { get } = await cookies()
+  const locale = get('locale')?.value ?? ''
 
   const messages = translationConfig.getCurrentMessageFromLocale(locale)
 

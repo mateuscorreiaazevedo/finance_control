@@ -3,7 +3,7 @@
 import { AlertSuccess, Button } from '@/modules/shared/components'
 import { useToast, useTranslations } from '@/modules/shared/hooks'
 import { useState } from 'react'
-import type { SignUpActionResponse } from '../_actions/signup.action'
+import type { SignUpActionResponse } from '../_functions/signup.action'
 
 type Props = {
   onSignup: () => Promise<SignUpActionResponse>

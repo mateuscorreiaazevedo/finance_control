@@ -1,7 +1,7 @@
 'use server'
 
 import { randomUUID } from 'node:crypto'
-import { TokenUtil } from '@/modules/shared/utils'
+import { TokenHelper } from '@/modules/shared/lib'
 import { RoleUser, User } from '@/modules/user/entities'
 import dayjs from 'dayjs'
 import { cookies } from 'next/headers'
@@ -22,9 +22,10 @@ export async function signupAction(): Promise<SignUpActionResponse> {
 
     const expiresIn = dayjs().add(7, 'day').toDate()
 
-    const createdToken = TokenUtil.create({
+    const createdToken = TokenHelper.create({
       id: randomUUID(),
-      fullName: user.fullName,
+      firstName: user.firstName,
+      lastName: user.lastName,
       email: user.email,
       userRole: user.userRole,
       exp: expiresIn.getTime(),

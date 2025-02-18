@@ -1,4 +1,4 @@
-import { SetTheme } from '@shared/components'
+import { SetTheme } from '@/modules/shared/components'
 
 export default function DashboardPage() {
   return (

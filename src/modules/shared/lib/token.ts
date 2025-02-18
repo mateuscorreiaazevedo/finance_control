@@ -1,6 +1,6 @@
 import * as jwt from 'jsonwebtoken'
 
-export class TokenUtil {
+export class TokenHelper {
   /**
    * Português: Cria um token JWT com base no payload e tempo de expiração fornecidos.
    * English: Creates a JWT token based on the provided payload and expiration time.
@@ -29,6 +29,20 @@ export class TokenUtil {
    */
   static verify<K extends object>(token: string): K {
     const payload = jwt.verify(token, process.env.JWT_SECRET) as K
+
+    return payload
+  }
+  /**
+   * Português: Decodifica a autenticidade de um token JWT com base na chave secreta.
+   * English: Decode the authenticity of a JWT token based on the secret key.
+   *
+   * @param token - Português: O token JWT a ser decodificado.
+   * @param token - English: The JWT token to be decoded.
+   * @returns Português: O payload do token decodificado.
+   * @returns English: The decoded token payload.
+   */
+  static decode<K extends object>(token: string): K {
+    const payload = jwt.decode(token) as K
 
     return payload
   }

@@ -1,5 +1,5 @@
 'use server'
-import { TokenUtil } from '@/modules/shared/utils'
+import { TokenHelper } from '@/modules/shared/lib'
 import dayjs from 'dayjs'
 import { cookies } from 'next/headers'
 
@@ -16,7 +16,7 @@ export async function getMeAction(): Promise<GetMeActionProps> {
     }
   }
 
-  const authenticated = TokenUtil.verify<any>(authSession.value)
+  const authenticated = TokenHelper.verify<any>(authSession.value)
 
   if (dayjs().isAfter(authenticated.exp)) {
     return {

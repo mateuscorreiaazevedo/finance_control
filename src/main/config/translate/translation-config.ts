@@ -1,4 +1,4 @@
-import { messages } from '@main/translate'
+import { messages } from '@/main/translate'
 
 type Messages = typeof messages
 

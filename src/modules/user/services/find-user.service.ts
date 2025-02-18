@@ -1,4 +1,4 @@
-import { prisma } from '@/shared/utils'
+import { prisma } from '@/modules/shared/lib'
 import type { FindUserContract } from '../contracts'
 import type { User } from '../entities'
 import { UserMapper } from '../utils'

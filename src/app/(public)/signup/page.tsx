@@ -1,8 +1,8 @@
 import { signoutAction } from '@/modules/shared/functions'
 import { getMeAction } from '@/modules/user/functions'
-import { signupAction } from './_actions/signup.action'
 import { SignupAlert } from './_components/signup-alert'
 import { SignupForm } from './_components/signup-form'
+import { signupAction } from './_functions/signup.action'
 
 export default async function SignUpPage() {
   const { data, error } = await getMeAction()

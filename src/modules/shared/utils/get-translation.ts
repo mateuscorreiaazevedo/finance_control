@@ -1,5 +1,5 @@
-import { translationConfig } from '@main/config'
-import { currentLocale } from '@main/translate/utils/current-locale'
+import { translationConfig } from '@/main/config'
+import { cookies } from 'next/headers'
 
 export async function getTranslations(prefix?: string) {
   const {
@@ -7,9 +7,9 @@ export async function getTranslations(prefix?: string) {
     getValueFromPathMessagesIsArray,
     getValueFromPathWithVariables,
   } = translationConfig
-  const { get } = await currentLocale()
+  const { get } = await cookies()
 
-  const locale = get()
+  const locale = get('locale')?.value ?? ''
   const messages = getCurrentMessageFromLocale(locale)
 
   function translate(path: string, values?: TranslationVariables) {

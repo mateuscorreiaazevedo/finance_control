@@ -1,4 +1,4 @@
-import { ClientConfig } from '@main/config'
+import { ClientConfig } from '@/main/config'
 import { type NextRequest, NextResponse } from 'next/server'
 
 export async function middleware(req: NextRequest) {
@@ -7,6 +7,11 @@ export async function middleware(req: NextRequest) {
   const localeConfig = clientConfig.configLocale()
   if (localeConfig instanceof NextResponse) {
     return localeConfig
+  }
+
+  const authConfig = clientConfig.configAuthentication()
+  if (authConfig instanceof NextResponse) {
+    return authConfig
   }
 
   return NextResponse.next()
