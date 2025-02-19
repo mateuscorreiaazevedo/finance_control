@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Registre-se! Fintrol",
+    "description": "Registre-se e controle suas finanças de forma simples, direta e automática com o Fintrol."
+  },
+  "title": "Fintrol",
+  "description": "Controle suas finanças de forma simples, direta e automática com o Fintrol.",
+  "information": "É gratuíto, aproveite!",
+  "image": {
+    "alt": "Um personagem estilizado, vestido de terno, colocando uma moeda em um cofre em forma de porquinho. O fundo é simples e minimalista."
+  },
+  "features": {
+    "creditCard": {
+      "title": "Controle a fatura do seus cartões de crédito.",
+      "description": "Com o Fintrol, ficou muito mais fácil controlar seus gastos no cartão. Basta alguns cliques e você poderá registrar, acompanhar e ter de forma automática o controle das compras parceladas nas próximas faturas."
+    },
+    "charts": {
+      "title": "Gráficos simples e completos sobre suas finanças.",
+      "description": "Um dashboard detalhado que traz tudo ao seu alcance, para que você tenha um controle mais claro e tranquilo sobre suas receitas e despesas."
+    },
+    "security": {
+      "title": "Segurança e confiança em suas finanças.",
+      "description": "Com o Fintrol, você tem a certeza de que suas finanças estão seguros e que ninguém vai ver você pagando por algo que você não pagou."
+    }
+  }
+}

@@ -1,60 +1,41 @@
 'use client'
+import { Button } from '@/modules/shared/components'
+import { useTranslations } from '@/modules/shared/hooks'
+import {} from 'lucide-react'
+import Image from 'next/image'
+import { useProvidersList } from '../../_hooks/use-providers-list'
 
-import { AlertSuccess, Button } from '@/modules/shared/components'
-import { useToast, useTranslations } from '@/modules/shared/hooks'
-import type { CreateUserRequestDTO } from '@/modules/user/dtos'
-import { useState } from 'react'
-import type { SignUpActionResponse } from '../_functions/signup.action'
+export function SignupForm() {
+  const { translate } = useTranslations('pages.signup.form')
 
-type Props = {
-  onSignup: (data: CreateUserRequestDTO) => Promise<SignUpActionResponse>
-  onSignout: () => Promise<void>
-}
-export function SignupForm({ onSignup, onSignout }: Props) {
-  const [error, setError] = useState<string | undefined>()
+  const providers = useProvidersList()
 
-  const { translate } = useTranslations()
-  const { setNotification } = useToast()
-
-  const handleSignUp = async () => {
-    const response = await onSignup({
-      firstName: 'Mateus',
-      lastName: 'st',
-      email: 'test@example',
-      password: 'test123',
-      confirmPassword: 'test123',
-      birthDate: new Date('1990-01-01'),
-    })
-
-    if (response?.error) {
-      setError(response.error)
-      return
-    }
-
-    setNotification({
-      component: AlertSuccess,
-      props: {
-        id: 'signupSuccess',
-        title: 'Bem-vindo!',
-        isDismissed: true,
-        withIcon: true,
-      },
-    })
-
-    setError(undefined)
-  }
   return (
-    <div className="flex  flex-col gap-4 items-center justify-center">
-      <Button
-        variant={error ? 'destructive' : 'default'}
-        onClick={handleSignUp}
-        className={error ? 'text-destructive-foreground' : ''}
-      >
-        Crie seu token {error && `Erro: ${translate(error)}`}
-      </Button>
-      <Button variant={'destructive'} onClick={onSignout}>
-        Sair
-      </Button>
-    </div>
+    <article className="flex md:w-2/5 w-full bg-zinc-200/30 backdrop-blur-sm p-10 rounded-xl border border-zinc-200/50 shadow">
+      {/* Providers */}
+      <section className="flex flex-col justify-center h-fit w-full items-center gap-6">
+        <h4 className="text-accent-foreground text-base/3">{translate('providers.label')}</h4>
+        <div className="flex flex-row gap-4 items-center">
+          {providers.map(provider => (
+            <Button
+              variant={'outline'}
+              key={`provider-${provider.key}`}
+              size={'lg'}
+              className="bg-primary-foreground/30 backdrop-blur-md border-primary/20 flex items-center hover:bg-primary-foreground/50 hover:border-primary/30"
+            >
+              <Image src={provider.icon} alt={provider.key} width={24} height={24} />
+              {provider.label}
+            </Button>
+          ))}
+        </div>
+        <div className="flex w-full items-center gap-2">
+          <div className="w-full h-px bg-zinc-200/50" />
+          <span className="font-light text-muted-foreground text-xs">
+            {translate('credentials.label')}
+          </span>
+          <div className="w-full h-px bg-zinc-200/50" />
+        </div>
+      </section>
+    </article>
   )
 }

@@ -1,0 +1,32 @@
+{
+  "credentials": {
+    "label": "Ou",
+    "firstName": {
+      "label": "Seu nome",
+      "placeholder": "João"
+    },
+    "lastName": {
+      "label": "Sobrenome",
+      "placeholder": "da Silva"
+    },
+    "email": {
+      "label": "Endereço de e-mail",
+      "placeholder": "joao.silva@email.com"
+    },
+    "password": {
+      "label": "Senha",
+      "placeholder": "Insira sua senha aqui."
+    },
+    "confirmPassword": {
+      "label": "Confirmar senha",
+      "placeholder": "Confirme sua senha."
+    },
+    "button": {
+      "label": "Registrar-se",
+      "loading": "Aguarde..."
+    }
+  },
+  "providers": {
+    "label": "Registre-se com:"
+  }
+}

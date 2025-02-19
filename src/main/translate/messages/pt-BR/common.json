@@ -5,5 +5,15 @@
   "meta": {
     "title": "Finance Control",
     "description": "O seu novo modo de controlar suas finanças."
+  },
+  "public": {
+    "providers": {
+      "list": [
+        {
+          "key": "google",
+          "label": "Google"
+        }
+      ]
+    }
   }
 }
