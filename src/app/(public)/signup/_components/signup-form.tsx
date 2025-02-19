@@ -1,7 +1,6 @@
 'use client'
 import { Button } from '@/modules/shared/components'
 import { useTranslations } from '@/modules/shared/hooks'
-import {} from 'lucide-react'
 import Image from 'next/image'
 import { useProvidersList } from '../../_hooks/use-providers-list'
 
@@ -11,7 +10,7 @@ export function SignupForm() {
   const providers = useProvidersList()
 
   return (
-    <article className="flex md:w-2/5 w-full bg-zinc-200/30 backdrop-blur-sm p-10 rounded-xl border border-zinc-200/50 shadow">
+    <article className="flex flex-col md:w-2/5 w-full bg-zinc-200/30 backdrop-blur-sm p-10 rounded-xl border border-zinc-200/50 shadow">
       {/* Providers */}
       <section className="flex flex-col justify-center h-fit w-full items-center gap-6">
         <h4 className="text-accent-foreground text-base/3">{translate('providers.label')}</h4>
@@ -35,6 +34,9 @@ export function SignupForm() {
           </span>
           <div className="w-full h-px bg-zinc-200/50" />
         </div>
+      </section>
+      <section className="flex flex-col">
+        <p>s</p>
       </section>
     </article>
   )

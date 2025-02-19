@@ -28,5 +28,8 @@
   },
   "providers": {
     "label": "Registre-se com:"
+  },
+  "termsOfService": {
+    "label": "Ao se inscrever, você concorda com os <a>Termos e Condições de Serviço</a>."
   }
 }

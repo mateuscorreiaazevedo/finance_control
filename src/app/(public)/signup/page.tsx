@@ -1,4 +1,5 @@
 import images from '@/assets/images'
+import { SphereBlur } from '@/modules/shared/components'
 import { getTranslations } from '@/modules/shared/functions/server'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -19,7 +20,7 @@ export default async function SignUpPage() {
 
   return (
     <section className="flex flex-1 h-screen py-10">
-      <div className="md:flex flex-1 hidden">teste</div>
+      <aside className="md:flex flex-1 hidden justify-end pr-10">teste</aside>
       <SignupForm />
 
       <Image
@@ -28,6 +29,7 @@ export default async function SignUpPage() {
         src={images.illustrations.savings}
         className="scale-75 md:scale-100 transition-all absolute -z-10 md:left-10 md:translate-x-0 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:dark:opacity-80"
       />
+      <SphereBlur position={'right-bottom'} color={'green'} />
     </section>
   )
 }
