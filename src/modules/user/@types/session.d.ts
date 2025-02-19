@@ -1,4 +1,4 @@
-declare interface Authenticated {
+declare interface AuthSession {
   id: string
   userRole: string
   exp: number

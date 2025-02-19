@@ -11,7 +11,7 @@ export class CreateUserUseCase {
   constructor(private service: UserContract) {}
 
   async execute(dto: CreateUserRequestDTO): Promise<CreateUserResponseDTO> {
-    const validateConfirmPassword: any = createUserRequestDTOSchema.safeParse(dto)
+    const validateConfirmPassword = createUserRequestDTOSchema.safeParse(dto)
 
     if (!validateConfirmPassword.success) {
       throw new Error(validateConfirmPassword.error.errors[0].message)

@@ -95,7 +95,7 @@ export class ClientConfig {
       )
     }
 
-    const userAuthenticated = token ? TokenHelper.decode<Authenticated>(token) : null
+    const userAuthenticated = token ? TokenHelper.decode<AuthSession>(token) : null
 
     const verifyAuthenticateRoutes = this.verifyRoutesWhenAuthenticated(
       userAuthenticated,
@@ -119,7 +119,7 @@ export class ClientConfig {
    * @returns English: Returns a redirect response if necessary or undefined if the authentication is valid.
    */
   private verifyRoutesWhenAuthenticated(
-    me: Authenticated | null,
+    me: AuthSession | null,
     isPublicRoute?: SystemRoute,
   ): NextResponse | void {
     if (me && isPublicRoute && isPublicRoute.whenAuthenticated === 'redirect') {
@@ -171,7 +171,7 @@ export class ClientConfig {
    * @returns Português: Retorna uma resposta de redirecionamento se o token está expirado ou undefined se não está.
    * @returns English: Returns a redirect response if the token is expired or undefined if not.
    */
-  private validateTokenIsExpired(userAuthenticated: Authenticated): NextResponse | void {
+  private validateTokenIsExpired(userAuthenticated: AuthSession): NextResponse | void {
     if (dayjs().isAfter(userAuthenticated.exp)) {
       return NextResponse.redirect(
         // TODO: Redirecionar para uma implementação de refresh

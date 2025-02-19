@@ -29,6 +29,7 @@ export async function signupAction(data: CreateUserRequestDTO): Promise<SignUpAc
       value: createdToken,
       domain: process.env.DOMAIN,
       path: '/',
+      httpOnly: true,
       expires: expiresIn,
     })
 
