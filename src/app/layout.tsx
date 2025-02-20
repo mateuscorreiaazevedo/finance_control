@@ -30,9 +30,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
 
   return (
     <html lang={locale}>
-      <body
-        className={`${montserrat.variable} ${poppins.variable} antialiased font-poppins bg-background text-foreground`}
-      >
+      <body className={`${montserrat.variable} ${poppins.variable} antialiased font-poppins`}>
         <ThemeProvider>
           <TranslationProvider locale={locale} messages={messages}>
             {children}
