@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SignUpPage() {
-  const { translate } = await getTranslations('pages.signup')
+  const { translate: _ } = await getTranslations('pages.signup')
 
   return (
     <section className="flex flex-1 h-screen py-10 items-center">
