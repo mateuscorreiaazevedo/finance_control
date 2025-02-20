@@ -1,4 +1,6 @@
-import * as jwt from 'jsonwebtoken'
+import * as jwt from 'jose'
+
+const key = new TextEncoder().encode(process.env.JWT_SECRET)
 
 export class TokenHelper {
   /**
@@ -12,8 +14,11 @@ export class TokenHelper {
    * @returns Português: O token JWT criado.
    * @returns English: The created JWT token.
    */
-  static create<K extends object>(payload: K): string {
-    const token = jwt.sign(payload, process.env.JWT_SECRET)
+  static create<K extends jwt.JWTPayload>(payload: K): Promise<string> {
+    const token = new jwt.SignJWT(payload)
+      .setProtectedHeader({ alg: 'HS256' })
+      .setIssuedAt()
+      .sign(key)
 
     return token
   }
@@ -27,10 +32,10 @@ export class TokenHelper {
    * @returns Português: O payload do token verificado.
    * @returns English: The verified token payload.
    */
-  static verify<K extends object>(token: string): K {
-    const payload = jwt.verify(token, process.env.JWT_SECRET) as K
+  static async verify<K = unknown>(token: string): Promise<K> {
+    const payload = await jwt.jwtVerify(token, key)
 
-    return payload
+    return payload as K
   }
   /**
    * Português: Decodifica a autenticidade de um token JWT com base na chave secreta.
@@ -42,7 +47,7 @@ export class TokenHelper {
    * @returns English: The decoded token payload.
    */
   static decode<K extends object>(token: string): K {
-    const payload = jwt.decode(token) as K
+    const payload = jwt.decodeJwt(token) as K
 
     return payload
   }

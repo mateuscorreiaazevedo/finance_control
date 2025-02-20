@@ -1,5 +1,4 @@
 'use client'
-import { Button } from '@/modules/shared/components'
 import { useTranslations } from '@/modules/shared/hooks'
 import Image from 'next/image'
 import { useProvidersList } from '../../_hooks/use-providers-list'
@@ -16,15 +15,14 @@ export function SignupForm() {
         <h4 className="text-accent-foreground text-base/3">{translate('providers.label')}</h4>
         <div className="flex flex-row gap-4 items-center">
           {providers.map(provider => (
-            <Button
-              variant={'outline'}
+            <button
+              type="button"
               key={`provider-${provider.key}`}
-              size={'lg'}
               className="bg-primary-foreground/30 backdrop-blur-md border-primary/20 flex items-center hover:bg-primary-foreground/50 hover:border-primary/30"
             >
               <Image src={provider.icon} alt={provider.key} width={24} height={24} />
               {provider.label}
-            </Button>
+            </button>
           ))}
         </div>
         <div className="flex w-full items-center gap-2">
