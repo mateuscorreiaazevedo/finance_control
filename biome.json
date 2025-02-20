@@ -48,6 +48,9 @@
           "fix": "safe"
         }
       },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
       "complexity": {
         "noForEach": "off",
         "noStaticOnlyClass": "off",

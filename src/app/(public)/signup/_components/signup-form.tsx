@@ -9,7 +9,7 @@ export function SignupForm() {
   const providers = useProvidersList()
 
   return (
-    <article className="flex flex-col md:w-2/5 flex-1 md:flex-none bg-gradient-to-tr to-purple-800/20 md:h-fit from-blue-800/20 backdrop-blur-sm p-10 rounded-xl border border-zinc-200/50 shadow">
+    <article className="flex flex-col md:w-2/5 flex-1 md:flex-none md:self-center bg-gradient-to-tr to-purple-800/20 md:h-fit from-blue-800/20 backdrop-blur-sm p-10 rounded-xl border border-zinc-200/50 shadow">
       {/* Providers */}
       <section className="flex flex-col justify-center h-fit w-full items-center gap-6">
         <h4 className="text-accent-foreground text-base/3">{translate('providers.label')}</h4>
