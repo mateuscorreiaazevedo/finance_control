@@ -4,7 +4,7 @@ import type { PropsWithChildren } from 'react'
 
 export default function PublicLayout({ children }: PropsWithChildren) {
   return (
-    <div className="bg-gradient-to-t to-zinc-900 from-blue-900">
+    <div className="bg-gradient-to-t to-zinc-900 from-blue-900 fixed inset-0">
       <main className="md:container px-2 relative z-10">{children}</main>
       <Image
         alt="wave-down"

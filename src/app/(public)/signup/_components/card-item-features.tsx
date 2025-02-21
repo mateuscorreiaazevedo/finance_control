@@ -12,7 +12,7 @@ export async function CardItemFeatures({ icon: Icon, path }: Props) {
 
   return (
     <section className="flex flex-col gap-1 justify-center">
-      <Icon className="size-8 fill-purple-600/20 text-purple-400" />
+      <Icon className="size-8  text-purple-500 fill-violet-500/20" />
       <h3 className="text-lg font-semibold text-purple-400">{translate('title')}</h3>
       <p className="text-sm font-light text-zinc-300">{translate('description')}</p>
     </section>
