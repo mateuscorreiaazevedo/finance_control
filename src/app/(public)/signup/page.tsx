@@ -19,8 +19,9 @@ export default async function SignUpPage() {
   const { translate } = await getTranslations('pages.signup')
 
   return (
-    <section className="flex flex-1 h-screen py-10 gap-10">
-      <aside className="md:flex flex-1 flex-col hidden mt-20 gap-8">
+    <section className="flex flex-1 h-screen py-10 gap-10 md:pt-24">
+      <Fintrol className="size-8 absolute md:hidden z-40 left-4 top-12" withoutBars rounded />
+      <aside className="md:flex flex-1 flex-col hidden gap-8">
         <header className="flex flex-col gap-2">
           <h1 className="text-2xl font-semibold font-montserrat text-purple-100 flex gap-2 items-end">
             <Fintrol className="size-9" withoutBars />
