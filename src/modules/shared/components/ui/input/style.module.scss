@@ -1,0 +1,42 @@
+.inputContainer {
+  @apply flex relative transition-all w-full duration-300;
+
+  & > input.fieldInput {
+    @apply bg-transparent flex-1 transition-all outline-none;
+  }
+
+  &.variantGlass {
+    @apply bg-gradient-to-br to-zinc-500/30 from-purple-500/30 backdrop-blur ring-violet-600 border-violet-900/50 shadow-inner;
+    @apply focus-within:shadow-none focus-within:border-violet-600 focus-within:ring-violet-300;
+    @apply border-2 ring-1 focus-within:ring-2;
+
+    & > input.fieldInput {
+      @apply text-zinc-100 placeholder:text-zinc-400;
+    }
+  }
+
+  &.sizeDefault {
+    @apply h-9 py-2 px-4 rounded-md;
+
+    &:has(.labelInside) {
+      @apply h-12 pt-4;
+    }
+  }
+}
+
+.label {
+  @apply absolute transition-all duration-300;
+
+  & > strong {
+    @apply text-destructive font-semibold;
+  }
+
+  &.labelInside {
+    @apply left-4 top-1/2 -translate-y-1/2;
+
+    &.insideNotEmpty {
+      @apply left-2 top-2 text-xs text-zinc-50;
+    }
+
+  }
+}

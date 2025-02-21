@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/modules/shared/components'
+import { Button, Input } from '@/modules/shared/components'
 import { useTranslations } from '@/modules/shared/hooks'
 import Image from 'next/image'
 import { useProvidersList } from '../../_hooks/use-providers-list'
@@ -35,6 +35,15 @@ export function SignupForm() {
           <div className="w-full h-px bg-zinc-200/50" />
         </div>
       </section>
+      <form className="w-full mt-8 space-y-4">
+        <fieldset className="flex lg:flex-row flex-col lg:gap-6 gap-4">
+          <Input label={translate('credentials.firstName.label')} />
+          <Input label={translate('credentials.lastName.label')} />
+        </fieldset>
+        <Input label={translate('credentials.email.label')} />
+        <Input type={'password'} label={translate('credentials.password.label')} />
+        <Input type={'password'} label={translate('credentials.confirmPassword.label')} />
+      </form>
     </article>
   )
 }

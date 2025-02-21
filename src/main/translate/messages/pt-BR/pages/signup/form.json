@@ -2,23 +2,27 @@
   "credentials": {
     "label": "Ou",
     "firstName": {
-      "label": "Seu nome",
+      "label": "Seu nome<strong>*</strong>",
       "placeholder": "João"
     },
     "lastName": {
-      "label": "Sobrenome",
+      "label": "Sobrenome<strong>*</strong>",
       "placeholder": "da Silva"
     },
     "email": {
-      "label": "Endereço de e-mail",
+      "label": "Endereço de e-mail<strong>*</strong>",
       "placeholder": "joao.silva@email.com"
     },
+    "birthDate": {
+      "label": "Data de aniversário<strong>*</strong>",
+      "placeholder": "01/01/2000"
+    },
     "password": {
-      "label": "Senha",
+      "label": "Senha<strong>*</strong>",
       "placeholder": "Insira sua senha aqui."
     },
     "confirmPassword": {
-      "label": "Confirmar senha",
+      "label": "Confirmar senha<strong>*</strong>",
       "placeholder": "Confirme sua senha."
     },
     "button": {
